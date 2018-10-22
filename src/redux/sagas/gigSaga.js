@@ -31,7 +31,7 @@ function* shelfSaga() {
 function* fetchGigs(action) {
     console.log('fetch was hit', action);
     try {
-        const gigResponse = yield call(axios.get, '/api/shelf')
+        const gigResponse = yield call(axios.get, '/api/gigs')
         yield put({ type: 'SET_Gigs', payload: gigResponse.data });
     } catch (error) {
         console.log(error);

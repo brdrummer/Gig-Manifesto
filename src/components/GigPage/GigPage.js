@@ -6,19 +6,21 @@ class GigPage extends Component {
     this.props.dispatch({ type:'FETCH_GIGS' });
  }
 
+ 
+
 
   render() {
-
     return (
       <div>
-       <h1>Hello</h1>
+       <h1>Hello </h1>
+
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  user: state.user,
+  gigList: reduxState.gigList
 });
 
 export default connect(mapStateToProps)(GigPage);
