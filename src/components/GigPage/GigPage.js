@@ -13,13 +13,13 @@ class GigPage extends Component {
     return (
       <div>
        <h1>Hello </h1>
-
+{JSON.stringify(this.props.gigList, null, 2)}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = reduxState => ({
   gigList: reduxState.gigList
 });
 

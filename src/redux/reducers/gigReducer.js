@@ -22,7 +22,5 @@ const gigList = (state = [], action) => {
 //     }
 // }
 
-export default combineReducers({
-    gigList,
-})
+export default gigList
  

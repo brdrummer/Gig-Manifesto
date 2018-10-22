@@ -1,7 +1,7 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* shelfSaga() {
+function* gigSaga() {
     yield takeEvery('FETCH_GIGS', fetchGigs);
     // yield takeEvery('DELETE_ITEM', deleteItem);
     // yield takeEvery('UPDATE_ITEM', updateItem);
@@ -32,7 +32,7 @@ function* fetchGigs(action) {
     console.log('fetch was hit', action);
     try {
         const gigResponse = yield call(axios.get, '/api/gigs')
-        yield put({ type: 'SET_Gigs', payload: gigResponse.data });
+        yield put({ type: 'SET_GIGS', payload: gigResponse.data });
     } catch (error) {
         console.log(error);
     }
@@ -47,4 +47,4 @@ function* fetchGigs(action) {
 
 
 
-export default shelfSaga;
+export default gigSaga;
