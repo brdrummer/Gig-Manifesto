@@ -20,15 +20,15 @@ router.get('/', (req, res) => {
 /**
  * Add an item for the logged in user to the shelf
 //  */
-// router.post('/', (req, res) => {
-//     pool.query(`INSERT INTO "item" ("description","image_url","person_id")
-//  VALUES ($1, $2, $3);`, [req.body.description, req.body.image_url, req.body.person_id])
-//         .then(() => {
-//             res.sendStatus(200);
-//         }).catch((error) =>{
-//             console.log('error', error); 
-//         });//end post query
-// });//end router post
+router.post('/', (req, res) => {
+    pool.query(`INSERT INTO "gigs" ("name", "startTime", "soundCheck", "address", "entryFee", "user_gig_id")
+ VALUES ($1, $2, $3, $4, $5, $6);`, [req.body.name, req.body.startTime, req.body.soundCheck, req.body.address, req.body.entryFee, req.body.user_gig_id])
+        .then(() => {
+            res.sendStatus(200);
+        }).catch((error) =>{
+            console.log('error', error); 
+        });//end post query
+});//end router post
 // //test2
 
 

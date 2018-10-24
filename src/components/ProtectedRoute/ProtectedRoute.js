@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
+
 // A Custom Wrapper Component -- This will keep our code DRY.
 // Responsible for watching redux state, and returning an appropriate component
 // API for this component is the same as a regular route
@@ -22,6 +23,7 @@ const ProtectedRoute = (props) => {
     component: ComponentToProtect,
     user,
     loginMode,
+    gigList,
     ...otherProps
   } = props;
 
@@ -40,7 +42,7 @@ const ProtectedRoute = (props) => {
     // show the RegisterPage
     ComponentToShow = RegisterPage;
   }
-
+  
   // We return a Route component that gets added to our list of routes
   return (
       <Route
@@ -50,7 +52,11 @@ const ProtectedRoute = (props) => {
         component={ComponentToShow}
       />
   )
+
+
+
 }
+
 
 // Instead of taking everything from state, we just want the user and loginMode
 // to determine which page we should show the user
@@ -60,6 +66,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.user,
     loginMode: state.loginMode,
+
   }
 }
 

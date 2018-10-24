@@ -3,6 +3,9 @@ import loginSaga from './loginSaga';
 import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import gigSaga from './gigSaga';
+import gigFormSaga from './gigFormSaga';
+import profileSaga from './profileSaga';
+import profileFormSaga from './profileFormSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -17,5 +20,8 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     gigSaga(),
+    gigFormSaga(),
+    profileSaga(),
+    profileFormSaga(),
   ]);
 }

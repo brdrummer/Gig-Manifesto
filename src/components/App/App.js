@@ -13,9 +13,11 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
+import ProfileForm from '../ProfileForm/ProfileForm';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import UserPage from '../UserPage/UserPage';
 import GigPage from '../GigPage/GigPage';
+import GigForm from '../GigForm/GigForm';
 
 import './App.css';
 
@@ -34,9 +36,15 @@ class App extends Component {
             <Redirect exact from="/" to="/home" />
             {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
-            <Route
+            <Route 
               exact
               path="/profile"
+              component={ProfileForm}
+     
+            />
+             <Route
+              exact
+              path="/profile2"
               component={ProfilePage}
             />
             {/* For protected routes, the view could show one of several things on the same route.
@@ -48,6 +56,11 @@ class App extends Component {
               path="/home"
               component={UserPage}
             />
+             <ProtectedRoute
+              exact
+              path="/gigform"
+              component={GigForm}
+            />  
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
             <ProtectedRoute

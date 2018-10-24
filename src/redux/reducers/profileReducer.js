@@ -2,11 +2,11 @@
 
 
 
-const gigList = (state = [], action) => {
+const profileList = (state = [], action) => {
     console.log(action.payload);
     
     switch (action.type) {
-        case 'SET_GIGS':
+        case 'SET_PROFILE':
             return action.payload;
         default:
             return state;
@@ -22,5 +22,5 @@ const gigList = (state = [], action) => {
 //     }
 // }
 
-export default gigList;
+export default profileList
  
