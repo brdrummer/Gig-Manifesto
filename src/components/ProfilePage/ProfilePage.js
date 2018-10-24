@@ -4,12 +4,28 @@ import ProfileItem from '../ProfileItem/ProfileItem';
 
 
 class ProfilePage extends Component {
+    state = {
+        textVisible: false
+      }
+
   componentDidMount() {
     this.props.dispatch({ type:'FETCH_GIGS' });
  }
 
 
+ toggleDisplay = (event) => {
+    this.setState({
+      textVisible: !this.state.textVisible
+    })
+  }
+
+
  render() {
+    let displayItem;
+    // IF for toggle
+    if (this.state.textVisible) {
+      displayItem = this.props.history.push('/gigform')
+    }
     return (
       <div>
         <table>
@@ -35,6 +51,8 @@ class ProfilePage extends Component {
                         })}
                     </tbody>
                 </table>
+                <button onClick={this.toggleDisplay}>Add A Gig!</button>
+        {displayItem}
 
       
 {/* // {JSON.stringify(this.props.gigList, null, 2)} */}

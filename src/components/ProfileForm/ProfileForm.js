@@ -7,6 +7,7 @@ class ProfileForm extends Component {
     email: '',
     bands: '',
     city: '',
+    isSubmitted: false
 }
 handleChangeFor = propertyName => event => {
     this.setState({
@@ -23,12 +24,18 @@ handleSubmit = (event) => {
         email: '',
         bands: '',
         city: '',
+        isSubmitted: !this.state.isSubmitted
        
     })
 };
   
 
   render() {
+    let displayItem;
+    // IF for toggle
+    if (this.state.isSubmitted) {
+        displayItem = this.props.history.push('/profile2')
+    }
     return (
       <div>
          <div>
@@ -42,6 +49,7 @@ handleSubmit = (event) => {
                     <input type="submit" value="Confirm" />
 
                 </form>
+                {displayItem}
               
             </div>
       </div>

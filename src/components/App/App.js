@@ -56,14 +56,14 @@ class App extends Component {
               path="/home"
               component={UserPage}
             />
-             <ProtectedRoute
+             <Route
               exact
               path="/gigform"
               component={GigForm}
             />  
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
-            <ProtectedRoute
+            <Route
               exact
               path="/gig"
               component={GigPage}
@@ -76,5 +76,10 @@ class App extends Component {
       </Router>
   )}
 }
+const mapReduxStatetoProps = reduxState => ({
+  reduxState,
+  gigsList: reduxState.gigsList
+})
 
-export default connect()(App);
+
+export default connect(mapReduxStatetoProps)(App);

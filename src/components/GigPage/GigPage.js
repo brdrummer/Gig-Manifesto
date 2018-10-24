@@ -5,19 +5,37 @@ import GigItem from '../GigItem/GigItem';
 
 
 class GigPage extends Component {
+
+  state = {
+    textVisible: false
+  }
+
+
   componentDidMount() {
-    this.props.dispatch({ type:'FETCH_GIGS' });
- }
+    this.props.dispatch({ type: 'FETCH_GIGS' });
+  }
 
 
- render() {
+  toggleDisplay = (event) => {
+    this.setState({
+      textVisible: !this.state.textVisible
+    })
+  }
+
+
+  render() {
+    let displayItem;
+    // IF for toggle
+    if (this.state.textVisible) {
+      displayItem = this.props.history.push('/gigform')
+    }
     return (
       <div>
         <h1>
-         Gig Management
+          Gig Management
        </h1>
         <table>
-        <thead>
+          <thead>
             <tr>
               <th>Name</th>
               <th>Start Time</th>
@@ -26,13 +44,15 @@ class GigPage extends Component {
               <th>Entry Fee</th>
             </tr>
           </thead>
-        <tbody>
-          {this.props.gigList.map(gig =>{
-          return  <GigItem key={gig.id} gig={gig} />
-        })}
+          <tbody>
+            {this.props.gigList.map(gig => {
+              return <GigItem key={gig.id} gig={gig} />
+            })}
           </tbody>
         </table>
-        </div>
+        <button onClick={this.toggleDisplay}>Add Another Gig!</button>
+        {displayItem}
+      </div>
     );
   }
 }
