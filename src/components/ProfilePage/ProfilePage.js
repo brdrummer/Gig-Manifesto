@@ -9,7 +9,7 @@ class ProfilePage extends Component {
       }
 
   componentDidMount() {
-    this.props.dispatch({ type:'FETCH_GIGS' });
+    this.props.dispatch({ type:'FETCH_PROFILE', payload: this.props.reduxState.user.id });
  }
 
 
@@ -28,23 +28,8 @@ class ProfilePage extends Component {
     }
     return (
       <div>
+          <h1>Your Profile</h1>
         <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Email
-                            </th>
-                            <th>
-                                Associated Bands
-                            </th>
-                            <th>
-                                City
-                            </th>
-                        </tr>
-                    </thead>
                     <tbody>
                         {this.props.profileList.map(profile => {
                             return <ProfileItem key={profile.id} profile={profile} /> 
@@ -55,14 +40,15 @@ class ProfilePage extends Component {
         {displayItem}
 
       
-{/* // {JSON.stringify(this.props.gigList, null, 2)} */}
+// {JSON.stringify(this.props.reduxState.user.id, null, 2)}
       </div>
     );
   }
 }
 
 const mapStateToProps = reduxState => ({
-    profileList: reduxState.profileList
+    profileList: reduxState.profileList,
+    reduxState
 });
 
 export default connect(mapStateToProps)(ProfilePage);

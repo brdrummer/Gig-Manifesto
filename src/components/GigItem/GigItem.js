@@ -1,51 +1,68 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
 
 
 
 
 class GigItem extends Component {
+    styles = {
+        card: {
+            maxWidth: 120,
+        },
+        media: {
+            height: 200,
+        },
+    };
+
 
 
     render() {
+        
+
         return (
-            <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Lizard
-                </Typography>
-                <Typography component="p">
-                  Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                  across all continents except Antarctica
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Learn More
-              </Button>
-            </CardActions>
-          </Card>
+            <Card className="section">
+                <CardActionArea>
+                    <Typography className="section"> <h2>Venue:</h2>
+
+                        <h4><td>{this.props.gig.name}</td></h4>
+                    </Typography>
+                    <CardMedia
+                        title="venue"
+                        className="picture"
+                        image={this.props.gig.image_url}
+                    />
+                    <CardContent>
+                        <Typography className="section"> <h2>Start Time:</h2>
+
+                            <h4><td>{this.props.gig.startTime}</td></h4>
+                        </Typography>
+                        <Typography className="section"> <h2>Sound Check:</h2>
+
+                            <h4><td>{this.props.gig.soundCheck}</td></h4>
+                        </Typography>
+                        <Typography className="section"> <h2>Address:</h2>
+
+                            <h4><td>{this.props.gig.address}</td></h4>
+                        </Typography>
 
 
-            // <tr>
-            //     <td>{this.props.gig.name}</td>
-            //     <td>{this.props.gig.startTime}</td>
-            //     <td>{this.props.gig.soundCheck}</td>
-            //     <td>{this.props.gig.address}</td>
-            //     <td>{this.props.gig.entryFee}</td>
-            // </tr>
+                        <Typography className="section"> <h2>Entry Fee:</h2>
+
+                            <h4> <td> $ {this.props.gig.entryFee}</td></h4>
+                        </Typography>
+
+
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+
 
         );
     }

@@ -5,8 +5,8 @@ const router = express.Router();
 /**
  * Get all of the items on the shelf
  */
-router.get('/', (req, res) => {
-    pool.query('SELECT * FROM "gigs";')
+router.get('/:id', (req, res) => {
+    pool.query(`SELECT * FROM "gigs" LEFT JOIN "person" ON "gigs"."user_gig_id"="person"."id" WHERE person.id=$1;`, [req.user.id])
         .then((results) => {
             console.log(results.rows);
             res.send(results.rows)
@@ -21,8 +21,8 @@ router.get('/', (req, res) => {
  * Add an item for the logged in user to the shelf
 //  */
 router.post('/', (req, res) => {
-    pool.query(`INSERT INTO "gigs" ("name", "startTime", "soundCheck", "address", "entryFee", "user_gig_id")
- VALUES ($1, $2, $3, $4, $5, $6);`, [req.body.name, req.body.startTime, req.body.soundCheck, req.body.address, req.body.entryFee, req.body.user_gig_id])
+    pool.query(`INSERT INTO "gigs" ("name", "startTime", "soundCheck", "address", "entryFee", "image_url", "user_gig_id")
+ VALUES ($1, $2, $3, $4, $5, $6, $7);`, [req.body.name, req.body.startTime, req.body.soundCheck, req.body.address, req.body.entryFee, req.body.image_url, req.body.user_gig_id])
         .then(() => {
             res.sendStatus(200);
         }).catch((error) =>{

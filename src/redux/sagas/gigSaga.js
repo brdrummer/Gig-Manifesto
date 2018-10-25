@@ -1,5 +1,6 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 function* gigSaga() {
     yield takeEvery('FETCH_GIGS', fetchGigs);
@@ -31,7 +32,7 @@ function* gigSaga() {
 function* fetchGigs(action) {
     console.log('fetch was hit', action);
     try {
-        const gigResponse = yield call(axios.get, '/api/gigs')
+        const gigResponse = yield call(axios.get, `/api/gigs/${action.payload}`)
         yield put({ type: 'SET_GIGS', payload: gigResponse.data });
     } catch (error) {
         console.log(error);
@@ -45,6 +46,11 @@ function* fetchGigs(action) {
 
 
 
-
-
+// const mapStateToProps = ({user}) => ({ user });
+// const mapReduxStatetoProps = (reduxState) => {
+// return {reduxState}
+// }
+// ${this.props.reduxState.user.id}
+// export default connect(mapReduxStatetoProps)(gigSaga);
+// export default connect(mapStateToProps)(gigSaga);
 export default gigSaga;

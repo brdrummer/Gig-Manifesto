@@ -7,6 +7,8 @@ class ProfileForm extends Component {
     email: '',
     bands: '',
     city: '',
+    image_url: '',
+    user_profile_id: this.props.reduxState.user.id,
     isSubmitted: false
 }
 handleChangeFor = propertyName => event => {
@@ -24,6 +26,8 @@ handleSubmit = (event) => {
         email: '',
         bands: '',
         city: '',
+        image_url: '',
+        user_profile_id: this.props.reduxState.user.id,
         isSubmitted: !this.state.isSubmitted
        
     })
@@ -45,6 +49,7 @@ handleSubmit = (event) => {
                     <input value={this.state.email} onChange={this.handleChangeFor('email')} placeholder="Email" />
                     <input value={this.state.bands} onChange={this.handleChangeFor('bands')} placeholder="Associated Bands" />
                     <input value={this.state.city} onChange={this.handleChangeFor('city')} placeholder="City" />
+                    <input value={this.state.image_url} onChange={this.handleChangeFor('image_url')} placeholder="Got a picture?" />
 
                     <input type="submit" value="Confirm" />
 
@@ -59,7 +64,8 @@ handleSubmit = (event) => {
 
 
 const mapStateToProps = reduxState => ({
-  profileList: reduxState.profileList
+  profileList: reduxState.profileList,
+  reduxState
 });
 
 export default connect(mapStateToProps)(ProfileForm);

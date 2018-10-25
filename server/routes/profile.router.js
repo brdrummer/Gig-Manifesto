@@ -6,8 +6,8 @@ const router = express.Router();
 
 
 router.post('/', (req, res) => {
-    pool.query(`INSERT INTO "profile" ("name", "email", "bands", "city")
-  VALUES ($1, $2, $3, $4);`, [req.body.name, req.body.email, req.body.bands, req.body.city])
+    pool.query(`INSERT INTO "profile" ("name", "email", "bands", "city", "image_url", "user_profile_id")
+  VALUES ($1, $2, $3, $4, $5, $6);`, [req.body.name, req.body.email, req.body.bands, req.body.city, req.body.image_url, req.body.user_profile_id])
         .then(() => {
             res.sendStatus(200);
         }).catch((error) =>{
@@ -15,8 +15,10 @@ router.post('/', (req, res) => {
         });//end post query
   });
   
-  router.get('/', (req, res) => {
-    pool.query('SELECT * FROM "profile";')
+  router.get('/:id', (req, res) => {
+
+    console.log(req.user.id);
+    pool.query(`SELECT * FROM "profile" LEFT JOIN "person" ON "profile"."user_profile_id"="person"."id" WHERE person.id=$1;`, [Number(req.user.id)])
         .then((results) => {
             console.log(results.rows);
             res.send(results.rows)

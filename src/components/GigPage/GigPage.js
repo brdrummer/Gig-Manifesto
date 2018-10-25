@@ -12,7 +12,8 @@ class GigPage extends Component {
 
 
   componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_GIGS' });
+    this.props.dispatch({ type: 'FETCH_GIGS', payload: this.props.reduxState.user.id});
+
   }
 
 
@@ -34,16 +35,10 @@ class GigPage extends Component {
         <h1>
           Gig Management
        </h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Start Time</th>
-              <th>SoundCheck</th>
-              <th>Address</th>
-              <th>Entry Fee</th>
-            </tr>
-          </thead>
+       {JSON.stringify(this.props.reduxState.user.id)}
+        
+       
+       <table>  
           <tbody>
             {this.props.gigList.map(gig => {
               return <GigItem key={gig.id} gig={gig} />
@@ -58,7 +53,8 @@ class GigPage extends Component {
 }
 
 const mapStateToProps = reduxState => ({
-  gigList: reduxState.gigList
+  gigList: reduxState.gigList,
+  reduxState
 });
 
 export default connect(mapStateToProps)(GigPage);

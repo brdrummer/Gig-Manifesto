@@ -14,6 +14,8 @@ class GigForm extends Component {
         soundCheck: '',
         address: '',
         entryFee: Number,
+        image_url: '',
+        user_gig_id: this.props.reduxState.user.id,
         isSubmitted: false
 
     }
@@ -39,6 +41,7 @@ class GigForm extends Component {
             soundCheck: '',
             address: '',
             entryFee: '',
+            image_url: '',
             isSubmitted: !this.state.isSubmitted
         })
 
@@ -64,9 +67,11 @@ class GigForm extends Component {
                     <input value={this.state.soundCheck} onChange={this.handleChangeFor('soundCheck')} placeholder="Sound-Check Time" />
                     <input value={this.state.address} onChange={this.handleChangeFor('address')} placeholder="Address" />
                     <input value={this.state.entryFee} onChange={this.handleChangeFor('entryFee')} placeholder="entryFee" />
+                    <input value={this.state.image_url} onChange={this.handleChangeFor('image_url')} placeholder="Got an image? Paste the url" />
 
                     <input type="submit" name="submit" value="Add Gig" />
                 </form>
+                {JSON.stringify(this.state)}
                 {displayItem}
             </div>
 
@@ -77,7 +82,8 @@ class GigForm extends Component {
 }
 
 const mapReduxStatetoProps = reduxState => ({
-    reduxState
+    reduxState,
+  
 })
 
 export default connect(mapReduxStatetoProps)(withRouter(GigForm));

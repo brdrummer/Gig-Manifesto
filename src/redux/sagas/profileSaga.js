@@ -10,7 +10,7 @@ function* profileSaga() {
 function* fetchProfiles(action) {
     console.log('fetch was hit', action);
     try {
-        const profileResponse = yield call(axios.get, '/api/profile')
+        const profileResponse = yield call(axios.get, `/api/profile/${action.payload}`)
         yield put({ type: 'SET_PROFILE', payload: profileResponse.data });
     } catch (error) {
         console.log(error);
