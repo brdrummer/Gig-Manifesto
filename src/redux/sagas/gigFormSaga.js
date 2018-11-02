@@ -9,7 +9,7 @@ function* gigFormSaga(){
 function* addGig(action) {
     try {
         yield call(axios.post, 'api/gigs', action.payload)
-        yield put({type:'FETCH_GIGS', payload: ''})
+        yield put({type:'FETCH_GIGS'})
     } catch (error) {
         console.log('error fetching gigs', error);
     };

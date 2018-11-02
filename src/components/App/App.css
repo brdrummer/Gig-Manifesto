@@ -1,181 +1,468 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
-    background-color: #F8FCFF;
-    color: #2F2F2F;
+    background-color: white;
     margin: 0;
+    background-image: url("http://pluspng.com/img-png/music-keyboard-png-hd-close-up-hands-playing-the-keyboard-in-the-music-studio-music-concept-stock-video-footage-videoblocks-1920.png");
+    background-color: #cccccc;
+
+ }
+
+div {
+    text-align: center;
 }
 
-.alert {
-    background-color: #ff4545;
-    margin: 50px;
-}
+   /***********   HEADERS   ***********/
 
-form {
-    background-color: #dbd5d5;
-    width: 30%;
-    height: 250px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 2px;
-}
-
-input {
-    margin: 5px;
-    margin-bottom: 10px;
-}
-
-.log-in, .log-out, .register {
-  background-color: #00acb0;
-  border-radius: 4px;
-  color: #f8f8f8;
-  min-height: 50px;
-  min-width: 100px;
-  outline:0;
-  cursor: pointer;
-}
-
-.log-in:hover, .log-out:hover, .register:hover {
-  background-color: #008183;
-}
-
-/* This line makes the "Register" and "Login" buttons look like links */
-.link-button {
-    background:none;
-    color:inherit;
-    border:none;
-    padding:0;
-    font: inherit;
-    outline:0;
-    border-bottom:1px solid #444; 
-    cursor: pointer;
+   .head {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
 }
 
 
-/* Standard Blues.css Stuff */
 
-  main {
-    margin: auto;
-    width: 80%;
-  }
 
-  header {
-    background-color: #2F67A4;
-    margin-bottom: 1em;
-    width: 100%;
-  }
-
-  h1 {
-    color: #C6C7C1;
+h1 {
+   color: #f2f2f2;
     font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
     margin: 0;
     margin-bottom: 1em;
     padding: 0.25em;
     text-align: center;
     text-shadow: 2px 2px 3px #888;
-  }
+}
 
-  h2, h3, h4, h5, h6 {
+h2 {
+    color: #f2f2f2;
+    text-align: left;
+    font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px #999;
+    padding-left: 50px;
+    padding-bottom: 50px;
+
+}
+  
+h3, h4, h5 {
     color: #2F2F2F;
     text-align: center;
     font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
     margin-top: 0;
     text-shadow: 1px 1px 2px #999;
-  }
+}
 
-  section:nth-of-type(odd) {
+p {
+    color: #cccccc;
+    text-align: left;
+    font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px #999;
+    padding-left: 50px;
+    padding-bottom: 100px;
+
+}
+
+ul {
+    color:#f2f2f2;
+    
+}
+
+li {
+    margin-bottom: 50px;
+    font-size: 25px;
+}
+
+    
+
+
+
+
+
+
+
+
+   /***********  BUTTONS  ***********/
+
+   .gigButton {
+    display: inline-flex;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    box-shadow: 2px 4px 6px #999;
+    
+    background:midnightblue;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-bottom: 50px;
+}
+
+
+.gigButton:hover,
+.gigButton:focus {
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+.gigButton:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.gigButton:active {
+  transform: scale(0.99);
+}
+
+
+
+  
+  
+.log-in, .log-out, .register {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    box-shadow: 2px 4px 6px #999;
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+    
+.log-in, .log-out, .register:hover,
+.log-in, .log-out, .register:focus {
+    background:black;
+}
+    
+.log-in, .log-out, .registerfocus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+    
+.log-in, .log-out, .register:active {
+    transform: scale(0.99);
+}
+
+.link-button {
+        background:none;
+        color:inherit;
+        border:none;
+        padding:0;
+        font: inherit;
+        outline:0;
+        border-bottom:1px solid #444; 
+        cursor: pointer;
+}
+
+ 
+.button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    box-shadow: 2px 4px 6px #999;
+    background: black;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.button:hover,
+.button:focus {
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+.button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.button:active {
+  transform: scale(0.99);
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    box-shadow: 2px 4px 6px #999;
+    background: black;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+button:hover,
+button:focus {
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+.profileButton {
+    display: inline-flex;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+   
+    background: darkolivegreen;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+   
+}
+
+
+.profileButton:hover,
+.profileButton:focus {
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+.profileButton:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.profileButton:active {
+  transform: scale(0.99);
+}
+
+    /***********  FORMS  ***********/
+      
+form {
+    background-color: #cccc;
+    width: 30%;
+    height: 250px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 2px;
+} 
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    padding: 5px;
+}
+
+input {
+  background-color: #FCFCFB;
+  border-radius: 0.5em;
+  display: inline-block;
+  margin: 5px 5px;
+  padding: 0.3em;
+}
+
+.section {
+    display: inline-block;
+    border-radius: 1.0em;
+    box-shadow: 6px 10px 15px #999;
+    margin-bottom: 0.0em;
+   
+  
+    transform: scale(0.7);
+}
+
+.sectionprofile {
+    display: inline-block;
+    border-radius: 1.0em;
+    box-shadow: 6px 10px 15px #999;
+    margin-bottom: 0.0em;
+   
+  
+  
+}
+.cardsection {
+    display: inline-block;
+    border-radius: 1.0em;
+    box-shadow: 6px 10px 15px #999;
+    margin-bottom: 0.0em;
+    margin-right: 100px;
+   
+  
+    transform: scale(.9);
+}
+
+.cardsectiontwo {
+    display: inline-block;
+    border-radius: 1.0em;
+    box-shadow: 6px 10px 15px #999;
+    margin-bottom: 0.0em;
+    margin-right: 100px;
+    background-color: black;
+   
+  
+    transform: scale(.9);
+}
+
+.tableSection {
+    display: inline-block;
+    border-radius: 1.0em;
+    box-shadow: 6px 10px 15px #999;
+    margin-bottom: 0.0em;
+    padding: 0.00em;
+    margin: 5px 5px;
+    transform: scale(0.8);
+  
+    
+}
+
+
+  
+section:nth-of-type(odd) {
     background-color: #97AFC3;
   }
-
+  
   section:nth-of-type(even) {
     background-color: #B8CFE0;
   }
+  
 
-  .section {
-    border-radius: 0.25em;
-    box-shadow: 3px 4px 5px #999;
-    margin-bottom: 0.25em;
-    padding: 1.00em;
-  }
-
-  a {
-    color: #234B78;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: #4174AC;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-
-  /***********   FORMS   ***********/
-
-  label {
-      display: inline-block;
-      width: 100px;
-      text-align: right;
-      padding: 5px;
-  }
-
-  input {
-    background-color: #FCFCFB;
-    border-radius: 0.5em;
-    display: inline-block;
-    margin: 5px 5px;
-    padding: 0.3em;
-  }
-
-  button {
-    background-color: #FCFCFB;
-    border-radius: 0.5em;
-    box-shadow: 1px 2px 3px #999;
-    margin: 5px 5px;
-    padding: 0.3em;
-  }
-
-  /***********   TABLES   ***********/
-
+  
+    /***********   TABLES   ***********/
+  
   table {
     width: 100%;
     background-color: #FCFCFB;
     border-collapse: collapse;
   }
-
+  
   th, td {
     padding: 0.5em;
     text-align: left;
   }
-
-
+  
+  
   tbody tr:nth-of-type(even) {
     background-color: #f5f5f5;
   }
-
-
+  
+  
   thead tr {
     background-color: #E6E6E5;
     color: #2F2F2F;
   }
+  
+ /***********   CARDS  ***********/
+  
+.newCard {
+    display: inline-block;
+    height: ;
+    width: 500px;
+    
+  }
+  
 
-/**********   CLASSES   ***********/
-.center {
-  text-align: center;
-}
-
-.align-input {
-  margin-left: 115px;
-}
+  
+  
+   /**********  PICTURES  ***********/
 
 .picture {
-  padding: 50px;
-  border-radius: 200px;
-  box-shadow: 3px 4px 5px #999;
-  margin-bottom: 100px;
-  height: 1000px;
-
+    display: inline-block;
+    padding: 50px;
+    height: 500px;
+    width: auto;
+    box-shadow: 3px 4px 5px #999;
+    margin-bottom: 100px;
+    transform: scale(1.0); 
+    
+    
 }
+    
+    
+.picturetwo {
+    display: inline-block;
+    padding: 50px;
+    height: 500px;
+    width: auto;
+    box-shadow: 6px 8px 10px #999;
+    margin-bottom: 100px;
+    transform: scale(1); 
+    
+    
+}
+    
+  
+     /**********  NAV  ***********/
+.nav-titletwo {
+        font-size: 75px;
+        font-weight: 700;
+        display: inline-block;
+        color: #f2f2f2;
+        padding-left: 10px;
+        text-decoration: underline;
+      }
+  
+  
+  
+  .nav-link {
+    float: left;
+    color: #f2f2f2;
+    background-color: #000000;
+    text-align: center;
+    padding: 24px 10px;
+    text-decoration: none;
+    font-size: 15px;
+  
+    /* these last two make the logout button in
+    the nav bar look like another link */
+    border:none;
+    cursor: pointer;
+    outline:0;
+  }
+  
+  .nav-link:hover {
+    background-color: black;
+  }
+  
+  .nav-right {
+    float: right;
+  }
+  

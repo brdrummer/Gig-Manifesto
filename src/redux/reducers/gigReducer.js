@@ -13,6 +13,7 @@ const gigList = (state = [], action) => {
     }
 };
 
+
 // const editItem = (state = {}, action) => {
 //     switch(action.type){
 //         case 'ADD_EDIT_ITEM':

@@ -9,7 +9,7 @@ import {
 import {connect} from 'react-redux';
 
 import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
+
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
@@ -18,6 +18,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import UserPage from '../UserPage/UserPage';
 import GigPage from '../GigPage/GigPage';
 import GigForm from '../GigForm/GigForm';
+import Map from '../Map/Map';
 
 import './App.css';
 
@@ -67,6 +68,11 @@ class App extends Component {
               exact
               path="/gig"
               component={GigPage}
+            />
+             <Route
+              exact
+              path="/map"
+              component={Map}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

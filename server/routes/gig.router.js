@@ -21,8 +21,8 @@ router.get('/:id', (req, res) => {
  * Add an item for the logged in user to the shelf
 //  */
 router.post('/', (req, res) => {
-    pool.query(`INSERT INTO "gigs" ("name", "startTime", "soundCheck", "address", "entryFee", "image_url", "user_gig_id")
- VALUES ($1, $2, $3, $4, $5, $6, $7);`, [req.body.name, req.body.startTime, req.body.soundCheck, req.body.address, req.body.entryFee, req.body.image_url, req.body.user_gig_id])
+    pool.query(`INSERT INTO "gigs" ("name", "date", "startTime", "soundCheck", "address", "entryFee", "image_url", "user_gig_id")
+ VALUES ($1, $2, $3, $4, $5, $6, $7, $8);`, [req.body.name, req.body.date, req.body.startTime, req.body.soundCheck, req.body.address, req.body.entryFee, req.body.image_url, req.body.user_gig_id])
         .then(() => {
             res.sendStatus(200);
         }).catch((error) =>{

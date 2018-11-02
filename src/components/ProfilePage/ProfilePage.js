@@ -29,18 +29,26 @@ class ProfilePage extends Component {
     return (
       <div>
           <h1>Your Profile</h1>
-        <table>
-                    <tbody>
+          <button className="gigButton"onClick={this.toggleDisplay}>Add A Gig!</button>
+          <hr className="head"></hr>
+         
+        
+       
+        {displayItem}
+       
+                  
                         {this.props.profileList.map(profile => {
                             return <ProfileItem key={profile.id} profile={profile} /> 
                         })}
-                    </tbody>
-                </table>
-                <button onClick={this.toggleDisplay}>Add A Gig!</button>
-        {displayItem}
+
+                  <hr className="head"></hr>
+  
+                   
+               
+              
 
       
-// {JSON.stringify(this.props.reduxState.user.id, null, 2)}
+{/* // {JSON.stringify(this.props.reduxState.user.id, null, 2)} */}
       </div>
     );
   }

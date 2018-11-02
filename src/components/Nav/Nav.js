@@ -10,7 +10,7 @@ const Nav = (props) => (
       <h2 className="nav-title">Gig Manifesto</h2>
     </Link>
     <div className="nav-right">
-      <Link className="nav-link" to="/home">
+      <Link className="button" to="/home">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}
@@ -19,16 +19,26 @@ const Nav = (props) => (
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (
         <>
-          <Link className="nav-link" to="/gig">
+          <Link className="button" to="/gig">
             Gig Management
           </Link>
-          <LogOutButton className="nav-link"/>
-        </>
-      )}
+         
+    
       {/* Always show this link since the about page is not protected */}
-      <Link className="nav-link" to="/profile2">
+      <Link className="button" to="/profile2">
         Profile
       </Link>
+      <Link className="button" to="/map">
+        Map
+      </Link>
+      <LogOutButton className="nav-link"/>
+        </>
+       )}
+
+       
+   
+
+      
 
     </div>
   </div>
@@ -39,8 +49,9 @@ const Nav = (props) => (
 // if they are logged in, we show them a few more links 
 // if you wanted you could write this code like this:
 // const mapStateToProps = ({ user }) => ({ user });
-const mapStateToProps = state => ({
-  user: state.user,
+const mapStateToProps = reduxState => ({
+  user: reduxState.user,
+
 });
 
 export default connect(mapStateToProps)(Nav);

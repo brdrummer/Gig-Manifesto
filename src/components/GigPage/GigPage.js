@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GigItem from '../GigItem/GigItem';
-
-
+import Map from '../Map/Map';
 
 class GigPage extends Component {
 
@@ -12,7 +11,7 @@ class GigPage extends Component {
 
 
   componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_GIGS', payload: this.props.reduxState.user.id});
+    this.props.dispatch({ type: 'FETCH_GIGS', payload: this.props.reduxState.user.id });
 
   }
 
@@ -35,19 +34,31 @@ class GigPage extends Component {
         <h1>
           Gig Management
        </h1>
-       {JSON.stringify(this.props.reduxState.user.id)}
-        
        
-       <table>  
-          <tbody>
-            {this.props.gigList.map(gig => {
+       <hr className="head"></hr>
+       <h2>Click a gig to open the map</h2>
+       <hr className="head"></hr>
+      
+         
+       {this.props.gigList.map(gig => {
               return <GigItem key={gig.id} gig={gig} />
             })}
-          </tbody>
-        </table>
-        <button onClick={this.toggleDisplay}>Add Another Gig!</button>
+           
+        {/* {JSON.stringify(this.props.reduxState.user.id)} */}
+        <hr className="head"></hr>
+       
+        <button className="gigButton"onClick={this.toggleDisplay}>Add Another Gig!</button>
         {displayItem}
+        <button className="profileButton">Share</button>
+
+
+ 
+          
+     
+        {/* <Map className="sectiontwo"
+        ></Map> */}
       </div>
+
     );
   }
 }

@@ -9,7 +9,8 @@ class ProfileForm extends Component {
     city: '',
     image_url: '',
     user_profile_id: this.props.reduxState.user.id,
-    isSubmitted: false
+    isSubmitted: false,
+    textVisible: false
 }
 handleChangeFor = propertyName => event => {
     this.setState({
@@ -32,6 +33,13 @@ handleSubmit = (event) => {
        
     })
 };
+
+toggleDisplay = (event) => {
+    this.setState({
+      textVisible: !this.state.textVisible,
+     
+    })
+  }
   
 
   render() {
@@ -40,11 +48,14 @@ handleSubmit = (event) => {
     if (this.state.isSubmitted) {
         displayItem = this.props.history.push('/profile2')
     }
+    if (this.state.textVisible) {
+        displayItem = this.props.history.push('/home')
+      }
     return (
       <div>
          <div>
                 
-                <form onSubmit={this.handleSubmit}>
+                <form className="section" onSubmit={this.handleSubmit}>
                     <input value={this.state.name} onChange={this.handleChangeFor('name')} placeholder="First and Last" />
                     <input value={this.state.email} onChange={this.handleChangeFor('email')} placeholder="Email" />
                     <input value={this.state.bands} onChange={this.handleChangeFor('bands')} placeholder="Associated Bands" />
@@ -55,6 +66,13 @@ handleSubmit = (event) => {
 
                 </form>
                 {displayItem}
+
+                <button onClick={this.toggleDisplay}>Go Back</button>
+        {displayItem}
+
+        <img src="http://pluspng.com/img-png/music-keyboard-png-hd-close-up-hands-playing-the-keyboard-in-the-music-studio-music-concept-stock-video-footage-videoblocks-1920.png"></img>
+
+                
               
             </div>
       </div>

@@ -21,28 +21,36 @@ class ProfileItem extends Component {
 
     render() {
         return (
-            <Card className="section">
-                <CardActionArea>
-                    <Typography className="section"> <h2>Name:</h2>
+            <Card className="sectionprofile">
+                <CardContent >
+
+                    <Typography> <h3>Name:</h3>
 
                         <h4><td>{this.props.profile.name}</td></h4>
                     </Typography>
+                    <hr></hr>
+                    <Typography > <h3>Email:</h3>
+
+                        <h4><td>{this.props.profile.email}</td></h4>
+                    </Typography>
+                    <hr></hr>
+                    <Typography > <h3>Bands:</h3>
+
+                        <h4><td>{this.props.profile.bands}</td></h4>
+                    </Typography>
+                    <hr></hr>
+                    <Typography > <h3>City:</h3>
+
+                        <h4><td>{this.props.profile.city}</td></h4>
+                    </Typography>
+                    <hr></hr>
                     <CardMedia
                         title="venue"
                         className="picture"
                         image={this.props.profile.image_url}
                     />
-                    <CardContent>
-                        <Typography className="section"> <h2>Email:</h2>
+                </CardContent>
 
-                            <h4><td>{this.props.profile.email}</td></h4>
-                        </Typography>
-                        <Typography className="section"> <h2>City:</h2>
-
-                            <h4><td>{this.props.profile.city}</td></h4>
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
             </Card>
         );
     }
