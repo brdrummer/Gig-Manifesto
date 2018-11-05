@@ -20,7 +20,8 @@ class GigForm extends Component {
         entryFee: Number,
         image_url: '',
         user_gig_id: this.props.reduxState.user.id,
-        isSubmitted: false
+        isSubmitted: false,
+        isVisible: false
 
     }
 
@@ -55,6 +56,14 @@ class GigForm extends Component {
     };
 
 
+  toggleMapDisplay = (event) => {
+    this.setState({
+     isVisible: !this.state.isVisible,
+      
+
+    })
+  }
+
 
     render() {
         let displayItem;
@@ -62,11 +71,15 @@ class GigForm extends Component {
         if (this.state.isSubmitted) {
             displayItem = this.props.history.push('/gig')
         }
+        if (this.state.isVisible) {
+            displayItem = this.props.history.push('/map')
+          }
 
         return (
-            <div className="button">
+            <div>
+                <button className="profileButton"onClick={this.toggleMapDisplay}>Find Directions</button>
 
-                <form className="section"onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <input value={this.state.name} onChange={this.handleChangeFor('name')} placeholder="Enter Venue Name" />
                     <input value={this.state.date} onChange={this.handleChangeFor('date')} placeholder="Date" />
                     <input value={this.state.startTime} onChange={this.handleChangeFor('startTime')} placeholder="Start Time" />

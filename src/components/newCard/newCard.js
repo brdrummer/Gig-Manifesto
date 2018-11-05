@@ -11,42 +11,59 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
   card: {
-    maxWidth: 345,
+    display: 'inline-block',
+    width: '30vw',
+    transitionDuration: '0.3s',
+    height: '35vw',
+    margin: '50px',
+    color: 'black',
+    textAlign: 'center',
+  
+
   },
   media: {
-    height: 140,
+    height: 200,
   },
 };
 
 function MediaCard(props) {
   const { classes } = props;
+
+
   return (
+ 
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+          image={props.gig.image_url}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
+        <CardContent className={classes.card.textAlign}>
+    <h3>Venue:</h3> 
+    <td>{props.gig.name}</td>
+    <h3>Date:</h3> 
+    <td>{props.gig.date}</td>
+    <h3>Start Time:</h3> 
+    <td>{props.gig.startTime}</td>
+    <h3>Sound Check:</h3> 
+    <td>{props.gig.soundCheck}</td>
+    <h3>Address:</h3> 
+    <td>{props.gig.address}</td>
+    <h3>Entry Fee:</h3> 
+    <td> $ {props.gig.entryFee}</td>
+
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Delete
         </Button>
         <Button size="small" color="primary">
-          Learn More
+          Edit
         </Button>
       </CardActions>
     </Card>
+ 
   );
 }
 

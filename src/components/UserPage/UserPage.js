@@ -7,7 +7,8 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 class UserPage extends Component {
   state = {
     textVisible: false,
-    gigDisplay: false
+    gigDisplay: false,
+   
   }
 
   logout = () => {
@@ -18,6 +19,7 @@ class UserPage extends Component {
   toggleDisplay = (event) => {
     this.setState({
       textVisible: !this.state.textVisible,
+      
 
     })
   }
@@ -29,6 +31,8 @@ class UserPage extends Component {
       gigDisplay: !this.state.gigDisplay
     })
   }
+
+ 
 
 
 
@@ -43,6 +47,7 @@ class UserPage extends Component {
     if (this.state.gigDisplay) {
       gigItem = this.props.history.push('/gig')
     }
+   
     return (
     
       <div>
@@ -54,10 +59,10 @@ class UserPage extends Component {
         <hr className="head"></hr>
 
          <div>
-          <ul>
+          <ul >
             <li>An application for the working class musician. </li>
             <li>Manage all of your gigs easily with just a few clicks.</li>
-            <li>Find addresses directly from the app and share with your band members.</li>
+            <li>Find addresses and directions directly from the app.</li>
           </ul>
         </div>
         <hr className="head"></hr>

@@ -12,6 +12,13 @@ div {
     text-align: center;
 }
 
+.small {
+
+    transform: scale(.8);
+
+    
+}
+
    /***********   HEADERS   ***********/
 
    .head {
@@ -46,13 +53,52 @@ h2 {
     padding-bottom: 50px;
 
 }
-  
-h3, h4, h5 {
-    color: #2F2F2F;
-    text-align: center;
+
+h5 {
+    color: #f2f2f2;
+    text-align: left;
     font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
     margin-top: 0;
     text-shadow: 1px 1px 2px #999;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    font-size: 200%;
+
+}
+
+h3 {
+
+    color: #2F2F2F;
+    text-align: center;
+    font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+    text-shadow: 1px 1px 2px #999;
+    text-align: center;
+    font-size: 150%;
+    font-weight: 10%;
+
+}
+
+td {
+    color: #2F2F2F;
+    text-align: center;
+    font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+    text-shadow: 1px 1px 2px #999;
+    text-align: center;
+    font-size: 150%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+   
+  
+
+
+}
+  
+h4, h5 {
+    color: #2F2F2F;
+    text-align: center;
+    font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+    text-shadow: 1px 1px 2px #999;
+    text-align: center;
 }
 
 p {
@@ -68,12 +114,14 @@ p {
 
 ul {
     color:#f2f2f2;
+    list-style-type: none;
     
 }
 
 li {
     margin-bottom: 50px;
     font-size: 25px;
+    list-style-type: none;
 }
 
     
@@ -274,6 +322,78 @@ button:active {
   transform: scale(0.99);
 }
 
+.loginButton {
+   
+    border: none;
+    margin-left: 50px;
+    margin: 0;
+    text-decoration: none;
+    float: right;
+   
+    background: darkolivegreen;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: right;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+   
+}
+
+
+.loginButton:hover,
+.loginButton:focus {
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+.loginButton:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.loginButton:active {
+  transform: scale(0.99);
+}
+
+.registerButton {
+
+    border: none;
+    margin-right: 50px;
+    margin: 0;
+    text-decoration: none;
+    float: center;
+   
+    background: darkolivegreen;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+   
+}
+
+
+.registerButton:hover,
+.registerButton:focus {
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+.registerButton:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.registerButton:active {
+  transform: scale(0.99);
+}
+
     /***********  FORMS  ***********/
       
 form {
@@ -285,20 +405,8 @@ form {
     border-radius: 2px;
 } 
 
-label {
-    display: inline-block;
-    width: 100px;
-    text-align: right;
-    padding: 5px;
-}
 
-input {
-  background-color: #FCFCFB;
-  border-radius: 0.5em;
-  display: inline-block;
-  margin: 5px 5px;
-  padding: 0.3em;
-}
+
 
 .section {
     display: inline-block;
@@ -374,10 +482,7 @@ section:nth-of-type(odd) {
     border-collapse: collapse;
   }
   
-  th, td {
-    padding: 0.5em;
-    text-align: left;
-  }
+
   
   
   tbody tr:nth-of-type(even) {
@@ -392,15 +497,9 @@ section:nth-of-type(odd) {
   
  /***********   CARDS  ***********/
   
-.newCard {
-    display: inline-block;
-    height: ;
-    width: 500px;
-    
-  }
-  
 
   
+
   
    /**********  PICTURES  ***********/
 

@@ -35,13 +35,13 @@ class ProfilePage extends Component {
         
        
         {displayItem}
-       
-                  
+        <ul className="small">
                         {this.props.profileList.map(profile => {
                             return <ProfileItem key={profile.id} profile={profile} /> 
                         })}
+                      </ul>
 
-                  <hr className="head"></hr>
+               
   
                    
                

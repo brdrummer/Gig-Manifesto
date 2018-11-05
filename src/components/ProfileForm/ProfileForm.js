@@ -55,7 +55,7 @@ toggleDisplay = (event) => {
       <div>
          <div>
                 
-                <form className="section" onSubmit={this.handleSubmit}>
+                <form  onSubmit={this.handleSubmit} className="cardsection">
                     <input value={this.state.name} onChange={this.handleChangeFor('name')} placeholder="First and Last" />
                     <input value={this.state.email} onChange={this.handleChangeFor('email')} placeholder="Email" />
                     <input value={this.state.bands} onChange={this.handleChangeFor('bands')} placeholder="Associated Bands" />
@@ -70,7 +70,7 @@ toggleDisplay = (event) => {
                 <button onClick={this.toggleDisplay}>Go Back</button>
         {displayItem}
 
-        <img src="http://pluspng.com/img-png/music-keyboard-png-hd-close-up-hands-playing-the-keyboard-in-the-music-studio-music-concept-stock-video-footage-videoblocks-1920.png"></img>
+       
 
                 
               

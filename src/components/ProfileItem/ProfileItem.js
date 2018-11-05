@@ -22,24 +22,24 @@ class ProfileItem extends Component {
     render() {
         return (
             <Card className="sectionprofile">
-                <CardContent >
+                <CardContent className="sectionprofile">
 
-                    <Typography> <h3>Name:</h3>
+                    <Typography> <h5>Name:</h5>
 
                         <h4><td>{this.props.profile.name}</td></h4>
                     </Typography>
                     <hr></hr>
-                    <Typography > <h3>Email:</h3>
+                    <Typography > <h5>Email:</h5>
 
                         <h4><td>{this.props.profile.email}</td></h4>
                     </Typography>
                     <hr></hr>
-                    <Typography > <h3>Bands:</h3>
+                    <Typography > <h5>Bands:</h5>
 
                         <h4><td>{this.props.profile.bands}</td></h4>
                     </Typography>
                     <hr></hr>
-                    <Typography > <h3>City:</h3>
+                    <Typography > <h5>City:</h5>
 
                         <h4><td>{this.props.profile.city}</td></h4>
                     </Typography>
